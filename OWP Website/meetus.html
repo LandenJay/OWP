@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="oldwest.png">
+    <title>Meet Us</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <img class="logo" src="oldwest.png">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="meetus.html">Meet The Team</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+      </ul>
+
+      <!-- Hamburger Menu Button -->
+      <div class="hamburger">
+        <span class="open">☰</span>
+        <span class="close">✖</span>
+      </div>
+
+    </nav>
+  </div>
+</header>
+
+<div class="menu-overlay"></div>
+
+
+<main>
+
+    <!-- HERO BANNER -->
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h1>Meet The Team</h1>
+            <p>Honest. Skilled. Reliable.</p>
+        </div>
+    </section>
+
+    <!-- SECTION DIVIDER -->
+    <div class="section-divider">
+        <h2>Our Leadership</h2>
+    </div>
+
+    <!-- TEAM SECTION -->
+    <section class="team-section">
+
+        <!-- JAXON FIRST -->
+        <div class="team-member fade-in">
+            
+            <div>
+                <h2>Nathan Olds</h2>
+                <p>Born and raised in St. George, Utah and have been a part of the painting industry for over a decade. I specialize in both interior painting, exterior painting, and epoxy coatings, ensuring every project is completed to the highest standards.</p>
+
+                <div class="social-row">
+                    <a href="#"><i data-lucide="facebook"></i></a>
+                    <a href="#"><i data-lucide="instagram"></i></a>
+                    <a href="#"><i data-lucide="mail"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="contact-cta fade-in">
+        <h2>Want to Work With Us?</h2>
+        <p>Get in touch today! We’re here to help with all your painting and epoxy coating needs.</p>
+        <a class="cta-btn" href="index.html#schedule">Book an Appointment</a>
+    </section>
+
+</main>
+
+<!-- SCROLL TO TOP BUTTON -->
+<button id="scrollTopBtn">↑</button>
+
+<footer>
+    <p>&copy; 2025 Olds West Painting | All rights reserved.</p>
+</footer>
+<script>
+  // Toggle mobile menu
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  const navItems = document.querySelectorAll('.nav-links a');
+  const overlay = document.querySelector('.menu-overlay');
+
+  function toggleMenu() {
+    navLinks.classList.toggle('show');
+    hamburger.classList.toggle('active');
+    overlay.classList.toggle('show');
+  }
+
+  // Hamburger click
+  hamburger.addEventListener('click', toggleMenu);
+
+  // Close when clicking a nav link
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      navLinks.classList.remove('show');
+      hamburger.classList.remove('active');
+      overlay.classList.remove('show');
+    });
+  });
+
+  // Close when clicking overlay
+  overlay.addEventListener('click', () => {
+    navLinks.classList.remove('show');
+    hamburger.classList.remove('active');
+    overlay.classList.remove('show');
+  });
+</script>
+
+<script>
+    /* Scroll to top button */
+    const scrollBtn = document.getElementById("scrollTopBtn");
+
+    window.addEventListener("scroll", () => {
+        scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+
+    scrollBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    /* Lucide icons */
+    lucide.createIcons();
+</script>
+
+</body>
+</html>

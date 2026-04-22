@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpg" href="oldwest.png">
+  <title>Olds West Painting</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <!-- Header -->
+<header>
+  <div class="container nav">
+    <img class="logo" src="oldwest.png">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="meetus.html">Meet The Team</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+      </ul>
+      <!-- Hamburger Menu Button -->
+      <!-- Hamburger Menu Button -->
+<div class="hamburger">
+  <span class="open">☰</span>
+  <span class="close">✖</span>
+</div>
+
+    </nav>
+  </div>
+</header>
+<!-- Overlay for mobile menu -->
+<div class="menu-overlay"></div>
+
+ <!-- Hero Section -->
+<section class="hero">
+  <img src="hero.jpg" class="hero-img">
+  <div class="hero-text">
+    <h2>Reliable Painting and Epoxy Coating Services</h2>
+    <p>Fast, professional painting and epoxy coating solutions to keep your home or business looking great year-round.</p>
+    <a href="#services" class="btn">Schedule Service</a>
+  </div>
+</section>
+
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="icons8-paint-roller-64.png" alt="Exterior Painting Icon" class="service-icon">
+          <h3>Interior Painting</h3>
+          <p>Transform your indoor spaces with smooth, clean interior painting
+      designed to brighten rooms and match your style.</p>
+        </div>
+        <div class="card">
+          <img src="icons8-paint-brush-48.png" alt="Interior Painting Icon" class="service-icon">
+          <h3>Exterior Painting</h3>
+          <p>Give your home or business a fresh, professional look with durable
+      exterior painting that boosts curb appeal and protects surfaces.</p>
+        </div>
+        <div class="card">
+         <img src="icons8-floor-64.png" alt="Epoxy Coating Icon" class="service-icon">
+          <h3>Epoxy Coatings</h3>
+          <p>Upgrade concrete floors with tough, attractive epoxy coatings that
+      resist wear, stains, and everyday damage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Trust -->
+  <section class="about">
+    <div class="container">
+      <h2>Why Choose Us?</h2>
+      <p>Olds West Painting was founded on the principle of providing honest, high-quality service to our community. We understand that when your heating or cooling system breaks down, it can be stressful and inconvenient. That's why we prioritize clear communication, fair pricing, and reliable workmanship on every job. Our team is made up of experienced professionals who are passionate about what they do, and we treat every customer like family. When you choose us, you're not just getting a service provider - you're gaining a trusted partner dedicated to keeping your environment safe, efficient, and comfortable year-round.</p>
+        <br><br>
+        With years of hands-on experience and a passion for helping people feel comfortable in their homes, we set out to create a painting company that puts customers first. That means fair pricing, clear communication, and high-quality workmanship on every job - no exceptions.
+        <br><br>
+        At the heart of Olds West Painting is the belief that comfort should be stress-free. That's why we treat every customer like family, and every job like it's our own home. When you choose us, you're not just getting a service provider - you're gaining a trusted partner dedicated to keeping your environment safe, efficient, and comfortable year-round.
+      </p>
+    </div>
+  </section>
+<section id="schedule" class="schedule-section">
+  <div class="container">
+    <h2>Book Your Service</h2>
+    <p>Select your preferred date and time slot below.</p>
+
+    <!-- Calendar (same as before) -->
+    <div class="calendar-container">
+      <div class="calendar-header">
+        <button id="prevMonth">&#8592;</button>
+        <h3 id="monthYear"></h3>
+        <button id="nextMonth">&#8594;</button>
+      </div>
+      <div class="calendar-grid" id="calendarGrid"></div>
+    </div>
+
+    <!-- Time Slots -->
+    <div class="time-box">
+      <label for="timeSlots">Choose Time:</label>
+      <select id="timeSlots" disabled>
+        <option value="">-- Select a time --</option>
+      </select>
+    </div>
+
+    <!-- Name + Email (email required) -->
+      <div class="info-box">
+      <label for="nameInput">Name <span style="color:#cc0000">*</span></label>
+      <input type="text" id="nameInput" placeholder="Full name" required>
+    </div>
+    <div class="info-box">
+      <label for="emailInput">Email <span style="color:#cc0000">*</span></label>
+      <input type="email" id="emailInput" placeholder="you@example.com" required>
+    </div>
+    <div class="info-box">
+      <label for="phoneInput">Phone <span style="color:#cc0000">*</span></label>
+      <input type="tel" id="phoneInput" placeholder="(123) 456-7890" required>
+    </div>
+    <div class="info-box">
+      <label for="addressInput">Address <span style="color:#cc0000">*</span></label>
+      <input type="text" id="addressInput" placeholder="123 Main St" required>
+    </div>
+    <div class="info-box">
+  <label for="detailsInput">Service Details <span style="color:#cc0000">*</span></label>
+  <textarea id="detailsInput" placeholder="Example: Need help with interior painting..." required></textarea>
+</div>
+
+
+    <!-- Book Button -->
+    <button class="btn" id="bookBtn" disabled>Confirm Appointment</button>
+
+    <!-- Confirmation Message -->
+    <p id="confirmation"></p>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Olds West Painting | All Rights Reserved</p>
+      <p>Call us: (435) 525-7456 | Email: nathan@oldswestpainting.com</p>
+    </div>
+  </footer>
+  <button id="scrollTopBtn">↑</button>
+ <script>
+  // Toggle mobile menu
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  const navItems = document.querySelectorAll('.nav-links a');
+  const overlay = document.querySelector('.menu-overlay');
+
+  function toggleMenu() {
+    navLinks.classList.toggle('show');
+    hamburger.classList.toggle('active');
+    overlay.classList.toggle('show');
+  }
+
+  // Hamburger click
+  hamburger.addEventListener('click', toggleMenu);
+
+  // Close when clicking a nav link
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      navLinks.classList.remove('show');
+      hamburger.classList.remove('active');
+      overlay.classList.remove('show');
+    });
+  });
+
+  // Close when clicking overlay
+  overlay.addEventListener('click', () => {
+    navLinks.classList.remove('show');
+    hamburger.classList.remove('active');
+    overlay.classList.remove('show');
+  });
+</script>
+<script>
+/* ---------- DOM refs ---------- */
+const monthYear = document.getElementById("monthYear");
+const calendarGrid = document.getElementById("calendarGrid");
+const prevMonthBtn = document.getElementById("prevMonth");
+const nextMonthBtn = document.getElementById("nextMonth");
+const timeSlots = document.getElementById("timeSlots");
+const bookBtn = document.getElementById("bookBtn");
+const confirmation = document.getElementById("confirmation");
+
+const nameInput = document.getElementById("nameInput");
+const emailInput = document.getElementById("emailInput");
+const phoneInput = document.getElementById("phoneInput");
+const addressInput = document.getElementById("addressInput");
+const detailsInput = document.getElementById("detailsInput");
+
+/* ---------- Calendar state ---------- */
+let currentDate = new Date();
+let selectedDate = null;
+
+/* ---------- Time slot definitions (value = 24h HH:MM, label = displayed) ---------- */
+const slots = {
+  weekday: [
+    { label: "9:00 AM", value: "09:00" },
+    { label: "11:00 AM", value: "11:00" },
+    { label: "1:00 PM", value: "13:00" },
+    { label: "3:00 PM", value: "15:00" },
+    { label: "5:00 PM", value: "17:00" }
+  ],
+  saturday: [
+    { label: "9:00 AM", value: "09:00" },
+    { label: "11:00 AM", value: "11:00" },
+    { label: "1:00 PM", value: "13:00" }
+  ],
+  sunday: []
+};
+
+/* Load stored bookings (structure: { "YYYY-MM-DD": ["09:00","11:00"] }) */
+let booked = JSON.parse(localStorage.getItem("bookedAppointments")) || {};
+
+/* ---------- Helpers ---------- */
+function formatDateYMD(date) {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, "0");
+  const d = String(date.getDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
+}
+
+/* ---------- Render calendar ---------- */
+function renderCalendar(date) {
+  const year = date.getFullYear();
+  const month = date.getMonth();
+
+  monthYear.textContent = date.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+
+  calendarGrid.innerHTML = "";
+
+  const firstDay = new Date(year, month, 1).getDay(); // 0=Sun
+  const lastDate = new Date(year, month + 1, 0).getDate();
+
+  // empty slots before first day
+  for (let i = 0; i < firstDay; i++) {
+    const empty = document.createElement("div");
+    calendarGrid.appendChild(empty);
+  }
+
+  for (let day = 1; day <= lastDate; day++) {
+    const cell = document.createElement("div");
+    cell.textContent = day;
+
+    const cellDate = new Date(year, month, day);
+    const today = new Date(); today.setHours(0,0,0,0);
+
+    if (cellDate < today) {
+      cell.classList.add("disabled");
+    } else {
+      cell.addEventListener("click", () => selectDate(cellDate, cell));
+    }
+
+    if (cellDate.getTime() === today.getTime()) {
+      cell.classList.add("today");
+    }
+
+    calendarGrid.appendChild(cell);
+  }
+}
+
+/* ---------- When user selects a date ---------- */
+function selectDate(date, cell) {
+  // clear previous selection
+  [...calendarGrid.children].forEach(c => c.classList.remove("selected"));
+  cell.classList.add("selected");
+
+  selectedDate = date;
+  loadTimeSlots(date);
+  confirmation.textContent = "";
+}
+
+/* ---------- Populate timeSlots dropdown based on selected date & booked slots ---------- */
+function loadTimeSlots(date) {
+  const dow = date.getDay(); // 0=Sun 6=Sat
+  let availableSlots = [];
+
+  if (dow === 0) availableSlots = slots.sunday;
+  else if (dow === 6) availableSlots = slots.saturday;
+  else availableSlots = slots.weekday;
+
+  // filter out already booked times on that date
+  const key = formatDateYMD(date);
+  const bookedTimes = booked[key] || [];
+  const filtered = availableSlots.filter(s => !bookedTimes.includes(s.value));
+
+  // populate dropdown
+  timeSlots.innerHTML = `<option value="">-- Select a time --</option>`;
+  if (filtered.length === 0) {
+    const opt = document.createElement("option");
+    opt.textContent = "No available slots";
+    opt.disabled = true;
+    timeSlots.appendChild(opt);
+    timeSlots.disabled = true;
+    bookBtn.disabled = true;
+  } else {
+    filtered.forEach(s => {
+      const opt = document.createElement("option");
+      opt.value = s.value;
+      opt.textContent = s.label;
+      timeSlots.appendChild(opt);
+    });
+    timeSlots.disabled = false;
+    bookBtn.disabled = false;
+  }
+}
+
+/* ---------- Event listeners for month nav ---------- */
+prevMonthBtn.addEventListener("click", () => {
+  currentDate.setMonth(currentDate.getMonth() - 1);
+  renderCalendar(currentDate);
+});
+nextMonthBtn.addEventListener("click", () => {
+  currentDate.setMonth(currentDate.getMonth() + 1);
+  renderCalendar(currentDate);
+});
+
+/* ---------- Book button logic: validates email, posts to backend, stores booked slot on success ---------- */
+bookBtn.addEventListener("click", async () => {
+  if (!selectedDate) {
+    confirmation.textContent = "⚠️ Please choose a date.";
+    confirmation.style.color = "red";
+    return;
+  }
+  const dateStr = formatDateYMD(selectedDate);
+  const timeValue = timeSlots.value; // "09:00"
+  const name = nameInput.value.trim() || "Customer";
+  const email = emailInput.value.trim();
+  const details = detailsInput.value.trim();
+  const phone = phoneInput.value.trim();
+  const address = addressInput.value.trim();
+
+
+  // basic email validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!email || !emailRegex.test(email)) {
+    confirmation.textContent = "⚠️ Please enter a valid email address.";
+    confirmation.style.color = "red";
+    return;
+  }
+
+  // send booking to backend
+  try {
+    bookBtn.disabled = true;
+    bookBtn.textContent = "Booking...";
+    const resp = await fetch("https://hvac-backend-q6yo.onrender.com/book", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ date: dateStr, time: timeValue, name, email, phone, address, details })
+
+    });
+    const data = await resp.json();
+    if (data.success) {
+      // store booking locally so slot disappears
+      if (!booked[dateStr]) booked[dateStr] = [];
+      booked[dateStr].push(timeValue);
+      localStorage.setItem("bookedAppointments", JSON.stringify(booked));
+
+      confirmation.textContent = `✅ Appointment confirmed for ${dateStr} at ${timeSlots.options[timeSlots.selectedIndex].text}. A confirmation email has been sent.`;
+      confirmation.style.color = "#007a3d";
+      loadTimeSlots(selectedDate); // refresh slots to remove booked one
+    } else {
+      confirmation.textContent = `⚠️ ${data.message || "Failed to book. Try again."}`;
+      confirmation.style.color = "red";
+    }
+  } catch (err) {
+    console.error(err);
+    confirmation.textContent = "⚠️ Network error. Could not reach the booking server.";
+    confirmation.style.color = "red";
+  } finally {
+    bookBtn.disabled = false;
+    bookBtn.textContent = "Confirm Appointment";
+  }
+});
+
+/* ---------- Initialize ---------- */
+renderCalendar(currentDate);
+</script>
+
+<script>
+    /* Scroll to top button */
+    const scrollBtn = document.getElementById("scrollTopBtn");
+
+    window.addEventListener("scroll", () => {
+        scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+
+    scrollBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    /* Lucide icons */
+    lucide.createIcons();
+</script>
+
+
+
+</body>
+</html>
