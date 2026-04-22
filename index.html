@@ -146,6 +146,7 @@
   </footer>
   <button id="scrollTopBtn">↑</button>
  <script>
+  const API_BASE = "https://owp-0536.onrender.com"; // Change to your backend URL when deployed
   // Toggle mobile menu
   const hamburger = document.querySelector('.hamburger');
   const navLinks = document.querySelector('.nav-links');
@@ -348,7 +349,7 @@ bookBtn.addEventListener("click", async () => {
   try {
     bookBtn.disabled = true;
     bookBtn.textContent = "Booking...";
-    const resp = await fetch("https://hvac-backend-q6yo.onrender.com/book", {
+    const resp = await fetch("https://owp-0536.onrender.com/book", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ date: dateStr, time: timeValue, name, email, phone, address, details })
